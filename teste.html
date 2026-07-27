@@ -21,5 +21,108 @@
 <li><a href="#contato">Contato</a></li>
 </ul>
 </nav>
+<form
+id="form-contact"
+action="/enviar"
+method="POST"
+novalidate>
+<fieldset>
+<legend>Dados de Contato</legend>
+<label for="input-name">
+Nome:
+</label>
+<input
+type="text"
+id="input-name"
+name="name"
+required>
+</fieldset>
+<button type="submit">
+Enviar
+</button>
+</form>
+<form id="form-register">
+<fieldset>
+<legend>Dados Pessoais</legend>
+<!-- nome, cpf, data nasc. -->
+</fieldset>
+<fieldset>
+<legend>Dados de Acesso</legend>
+<!-- email, senha -->
+</fieldset>
+<fieldset>
+<legend>Preferências</legend>
+<!-- interesses, newsletter -->
+</fieldset>
+</form>
+<select name="category"
+id="input-category">
+<option
+value="">Selecione...</opt
+ion>
+<option
+value="eletronicos">Eletrônicos</option>
+<option
+value="moda">Moda</option>
+</select>
+<input type="radio"
+name="client-type"
+id="radio-pf"
+value="pf">
+
+<label for="radio-
+pf">Pessoa Física</label>
+
+<input type="radio"
+name="client-type"
+id="radio-pj"
+value="pj">
+
+<label for="radio-
+pj">Pessoa
+
+Jurídica</label><input type="checkbox"
+name="preferences"
+id="check-offers"
+value="offers">
+
+<label for="check-
+offers">Receber
+
+ofertas</label>
+<input type="checkbox"
+name="preferences"
+id="check-news"
+value="news">
+
+<label for="check-
+news">Newsletter</label>
+<!-- Nome obrigatório -->
+<input type="text"
+id="input-name"
+name="name"
+required
+minlength="3"
+placeholder="Seu nome completo">
+<!-- E-mail com validação -->
+<input type="email"
+id="input-email"
+name="email"
+required
+placeholder="seu@email.com">
+<!-- Senha segura -->
+<input type="password"
+id="input-password"
+name="password"
+required
+minlength="8"
+placeholder="Mínimo 8 caracteres">
+<!-- Idade mínima -->
+<input type="number"
+id="input-age"
+name="age"
+min="18"
+max="120"
+placeholder="Sua idade">
 </body>
 </html>
