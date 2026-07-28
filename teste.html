@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Minha loja online</title>
+
+    <!--Vinculação do css externo-->
+    
 </head>
 <body>
     <h1>Minha Loja Virtual</h1>
@@ -15,7 +18,8 @@
 
     <nav class="nav-menu">
 <ul>
-<!-- Cada item do menu aponta para uma seção com ID -->
+
+    <!-- Cada item do menu aponta para uma seção com ID -->
 <li><a href="#home">Home</a></li>
 <li><a href="#produtos">Produtos</a></li>
 <li><a href="#contato">Contato</a></li>
@@ -44,14 +48,20 @@ Enviar
 <form id="form-register">
 <fieldset>
 <legend>Dados Pessoais</legend>
+
+
 <!-- nome, cpf, data nasc. -->
 </fieldset>
 <fieldset>
 <legend>Dados de Acesso</legend>
+
+
 <!-- email, senha -->
 </fieldset>
 <fieldset>
 <legend>Preferências</legend>
+
+
 <!-- interesses, newsletter -->
 </fieldset>
 </form>
@@ -70,6 +80,7 @@ name="client-type"
 id="radio-pf"
 value="pf">
 
+
 <label for="radio-
 pf">Pessoa Física</label>
 
@@ -79,9 +90,7 @@ id="radio-pj"
 value="pj">
 
 <label for="radio-
-pj">Pessoa
-
-Jurídica</label><input type="checkbox"
+pj">PessoaJurídica</label><input type="checkbox"
 name="preferences"
 id="check-offers"
 value="offers">
@@ -97,6 +106,7 @@ value="news">
 
 <label for="check-
 news">Newsletter</label>
+
 <!-- Nome obrigatório -->
 <input type="text"
 id="input-name"
@@ -104,12 +114,16 @@ name="name"
 required
 minlength="3"
 placeholder="Seu nome completo">
+
+
 <!-- E-mail com validação -->
 <input type="email"
 id="input-email"
 name="email"
 required
 placeholder="seu@email.com">
+
+
 <!-- Senha segura -->
 <input type="password"
 id="input-password"
@@ -117,6 +131,8 @@ name="password"
 required
 minlength="8"
 placeholder="Mínimo 8 caracteres">
+
+
 <!-- Idade mínima -->
 <input type="number"
 id="input-age"
