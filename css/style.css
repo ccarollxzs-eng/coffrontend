@@ -103,6 +103,7 @@ main {
     text-align: center;
     vertical-align: top;
     transition: 0.3s;
+    border-radius: 10px;
 }
 .product-card img {
     width: 100%;
