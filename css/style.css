@@ -1,21 +1,137 @@
-/*Reset*/
+/* Reset */
 * {
     margin: 0;
     padding: 0;
-    box-sizing : border-box;
+    box-sizing: border-box;
 }
 
-/*corpo da página*/
-body{
+/* Corpo */
+body {
     font-family: Arial, sans-serif;
-    background-color: #eba7ca;
-    color: #050703;
-
+    background-color: #f4f4f4;
 }
-/*cabeçalho*/
-.header{
-    background-color: antiquewhite;
-    color: #eba7ca;
-    padding: 20px;
+
+/* Cabeçalho */
+.header {
+    background-color: #354024;
+    color: white;
     text-align: center;
+    padding: 15px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Menu */
+.nav-menu ul {
+    list-style: none;
+    margin-top: 10px;
+}
+
+.nav-menu li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+.nav-menu a {
+    color: white;
+    text-decoration: none;
+}
+
+.nav-menu a:hover {
+    text-decoration: underline;
+}
+
+/* Conteúdo */
+main {
+    margin-top: 120px;
+    padding: 20px;
+}
+
+/* Banner */
+.banner {
+    background: #94A59C;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+/* Produtos */
+.product-card {
+    display: inline-block;
+    width: 45%;
+    background: white;
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin: 10px;
+    text-align: center;
+    vertical-align: top;
+    transition: 0.3s;
+}
+
+.product-card img {
+    width: 100%;
+    max-width: 250px;
+    margin: 10px 0;
+}
+.product-card {
+    display: inline-block;
+    width: 45%;
+    background: white;
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin: 10px;
+    text-align: center;
+    vertical-align: top;
+    transition: 0.3s;
+}
+.product-card img {
+    width: 100%;
+    max-width: 250px;
+    margin: 10px 0;
+}
+
+.product-card:hover {
+    transform: scale(1.03);
+    background: #839958;
+    border-color: #105666;
+}
+
+/* Seções */
+section {
+    margin-bottom: 30px;
+}
+
+iframe,
+video {
+    margin: 10px;
+}
+
+/* Formulário */
+form input {
+    width: 250px;
+    padding: 8px;
+}
+
+button {
+    padding: 10px 20px;
+    background: #839958;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #0a3323;
+}
+
+/* Rodapé */
+.footer {
+    background: #222;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 20px;
 }
