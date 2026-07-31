@@ -47,6 +47,7 @@ body {
 main {
     margin-top: 120px;
     padding: 20px;
+    text-align: center;
 }
 
 /* Banner */
@@ -71,6 +72,38 @@ main {
     transition: 0.3s;
 }
 
+.product-card img {
+    width: 100%;
+    max-width: 250px;
+    margin: 10px 0;
+}
+.product-card {
+    display: inline-block;
+    width: 45%;
+    background: white;
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin: 10px;
+    text-align: center;
+    vertical-align: top;
+    transition: 0.3s;
+}
+.product-card img {
+    width: 100%;
+    max-width: 250px;
+    margin: 10px 0;
+}
+.product-card {
+    display: inline-block;
+    width: 45%;
+    background: white;
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin: 10px;
+    text-align: center;
+    vertical-align: top;
+    transition: 0.3s;
+}
 .product-card img {
     width: 100%;
     max-width: 250px;
