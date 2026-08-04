@@ -21,6 +21,7 @@ body {
     width: 100%;
     top: 0;
     z-index: 1000;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 /* Menu */
@@ -60,42 +61,11 @@ main {
 }
 
 /* Produtos */
-.product-card {
-    display: inline-block;
-    width: 45%;
-    background: white;
-    border: 1px solid #ddd;
-    padding: 15px;
-    margin: 10px;
-    text-align: center;
-    vertical-align: top;
-    transition: 0.3s;
-}
 
-.product-card img {
-    width: 100%;
-    max-width: 250px;
-    margin: 10px 0;
-}
+
 .product-card {
     display: inline-block;
-    width: 45%;
-    background: white;
-    border: 1px solid #ddd;
-    padding: 15px;
-    margin: 10px;
-    text-align: center;
-    vertical-align: top;
-    transition: 0.3s;
-}
-.product-card img {
-    width: 100%;
-    max-width: 250px;
-    margin: 10px 0;
-}
-.product-card {
-    display: inline-block;
-    width: 45%;
+    
     background: white;
     border: 1px solid #ddd;
     padding: 15px;
@@ -104,27 +74,6 @@ main {
     vertical-align: top;
     transition: 0.3s;
     border-radius: 10px;
-}
-.product-card img {
-    width: 100%;
-    max-width: 250px;
-    margin: 10px 0;
-}
-.product-card {
-    display: inline-block;
-    width: 45%;
-    background: white;
-    border: 1px solid #ddd;
-    padding: 15px;
-    margin: 10px;
-    text-align: center;
-    vertical-align: top;
-    transition: 0.3s;
-}
-.product-card img {
-    width: 100%;
-    max-width: 250px;
-    margin: 10px 0;
 }
 
 .product-card:hover {
@@ -168,4 +117,48 @@ button:hover {
     text-align: center;
     padding: 15px;
     margin-top: 20px;
+}
+#produtos {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 5px;
+    padding:  5px;
+}
+@media(min-width: 768px) {
+.products {
+    grid-template-columns: repeat(2, 1fr);
+
+}
+
+}
+
+@media(min-width: 1024px) {
+.products {
+    grid-template-columns: repeat(3, 1fr);
+
+}
+
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: hsl(134, 9%, 54%);
+}
+
+ul li {
+  float: left;
+}
+
+ul li a {
+  display: block;
+  color: #244e10;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+ul li a:hover {
+  background-color: #A2B447;
 }
