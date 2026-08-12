@@ -1,106 +1,169 @@
-const produtos = [
-    {
-        nome: "Caneta",
-        preco: 4.99,
-        categoria: "Papelaria",
-        imagem: "caneta.jpg"
-    },
-    {
-        nome: "Borracha",
-        preco: 2.58,
-        categoria: "Papelaria",
-        imagem: "borracha.jpg"
-    },
-    {
-        nome: "Caderno",
-        preco: 25.90,
-        categoria: "Papelaria",
-        imagem: "caderno.jpg"
-    },
-    {
-        nome: "Mochila",
-        preco: 89.90,
-        categoria: "Acessórios",
-        imagem: "mochila.jpg"
-    },
-    {
-        nome: "Garrafa",
-        preco: 35.90,
-        categoria: "Acessórios",
-        imagem: "garrafa.jpg"
-    }
+// ==========================
+ // ARRAY DE PRODUTOS (CATÁLOGO)
+ // ==========================
+ const produtos = [
+ {
+ id: 1,
+ nome: "Smartphone",
+ preco: 7500,
+ categoria: "Eletrônicos",
+ imagem: "img/iphone.jpg"
+ },
+ {
+ id: 2,
+ nome: "Camiseta",
+preco: 250,
+ categoria: "Roupas",
+imagem: "img/camisa.jpg"
+ },
+ {
+ id: 3,
+ nome: "Relógio",
+ preco: 100000,
+ categoria: "Acessórios",
+ imagem: "img/relogio.jpg"
+ }
 ];
 
+ // ==========================
+ const container = document.getElementById("product-list");
+ // ==========================
+ // FUNÇÃO PARA RENDERIZAR PRODUTOS
+ // ==========================
+ function renderizarProdutos(lista) {
+ // limpa antes de renderizar
+ container.innerHTML = "";
+ lista.forEach(produto => {
 
-function listarProdutos() {
+ // cria card
+ const card = document.createElement("div");
+ card.classList.add("product-card");
 
-    for (let i = 0; i < produtos.length; i++) {
+ // conteúdo do card
+ card.innerHTML = `
+ <img src="${produto.imagem}" alt="${produto.nome}">
+ <h3>${produto.nome}</h3>
+ <p>R$ ${produto.preco}</p>
+ `;
+ // adiciona no container
+ container.appendChild(card);
+ });
+ }
+ // ==========================
+ renderizarProdutos(produtos);
 
-        console.log(
-            `Nome: ${produtos[i].nome} - Preço: ${produtos[i].preco} - Categoria: ${produtos[i].categoria}`
-        );
+ // ==========================
+ // DESTRUCTURING
+ // ==========================
+ const { nome, preco } = produtos[0];
+ console.log(`Produto: ${nome} - R$ ${preco}`);
 
-    }
+ function listarProdutos(lista) {
+ lista.forEach(produto => {
+ console.log(`Produto: ${produto.nome} - R$ ${produto.preco}`);
+});
+ }
 
-}
+ listarProdutos(produtos);
 
-listarProdutos();
+ // ==========================
+ // FILTRAR POR CATEGORIA
+ // ==========================
+ function filtrarPorCategoria(categoria) { return produtos.filter(produto => produto.categoria === categoria);
+ }
 
+ const eletronicos = filtrarPorCategoria("Eletrônicos");
+ console.log(eletronicos);
 
-function filtrarProdutos(categoria) {
+ // ==========================
+ // SPREAD OPERATOR
+ // ==========================
+const novosProdutos = [
+ ...produtos,
+ {
+ id: 4,
+ nome: "Notebook",
+ preco: 3500,
+ categoria: "Eletrônicos",
+ imagem: "https://via.placeholder.com/150"
+ }
+ ];
 
-    const produtosFiltrados = produtos.filter(
-        produto => produto.categoria === categoria
-    );
+ console.log(novosProdutos);
 
-    return produtosFiltrados;
-}
+ // ==========================
+ // SIMULAÇÃO JSON
+ // ==========================
+ const produtosJSON = JSON.stringify(produtos);
+ console.log(produtosJSON);
 
+ const produtosConvertidos = JSON.parse(produtosJSON);
+ console.log(produtosConvertidos);
 
-const produtosPapelaria = filtrarProdutos("Papelaria");
+ // ==========================
+ // VALIDAÇÃO DE FORMULÁRIO
+ // ==========================
+ const form = document.getElementById("formulario");
+const mensagem = document.getElementById("mensagem");
 
-console.log("Produtos de Papelaria:");
+ form.addEventListener("submit", function(event) {
+ event.preventDefault();
 
-for (let i = 0; i < produtosPapelaria.length; i++) {
+ const nome = document.getElementById("nome").value;
+ const email = document.getElementById("email").value;
+ if (nome === "" || email === "") {
+ mensagem.textContent = "Preencha todos os campos!";
+ } else {
+ mensagem.textContent = "Formulário enviado com sucesso!";
+ mensagem.style.color = "green";
+ }
+ });
+ // ==========================
+const inputTarefa = document.getElementById("nova-tarefa");
+ const botaoAdicionar = document.getElementById("adicionar");
+ const lista = document.getElementById("lista-tarefas");
 
-    console.log(
-        `Nome: ${produtosPapelaria[i].nome} - Preço: ${produtosPapelaria[i].preco}`
-    );
+ // carregar do localStorage
 
-}
+ let tarefas = JSON.parse(localStorage.getItem("tarefas")) || [];
 
+ // renderizar tarefas
+ function renderizarTarefas() {
+ lista.innerHTML = "";
 
-const { nome, preco, categoria, imagem } = produtos[0];
+ tarefas.forEach((tarefa, index) => {
+ const li = document.createElement("li");
+ li.textContent = tarefa;
 
-console.log("Destructuring:");
+ // botão remover
+ const btn = document.createElement("button");
+ btn.textContent = "Remover";
 
-console.log(nome);
-console.log(preco);
-console.log(categoria);
-console.log(imagem);
+ btn.addEventListener("click", () => {
+ tarefas.splice(index, 1);
+ salvar();
+ });
 
+ li.appendChild(btn);
+ lista.appendChild(li);
+ });
+ }
+ // salvar no localStorage
+ function salvar() {
+ localStorage.setItem("tarefas", JSON.stringify(tarefas));
+ renderizarTarefas();
+ }
 
-const produtoNovo = {
-    ...produtos[0],
-    preco: 5.99
-};
+// adicionar tarefa
+ botaoAdicionar.addEventListener("click", () => {
+ const nova = inputTarefa.value;
 
-console.log("Produto modificado:");
+ if (nova !== "") {
+ tarefas.push(nova);
+ inputTarefa.value = "";
+ salvar();
+ }
+ });
 
-console.log(produtoNovo);
-
-
-
-
-const novoProduto = {
-    nome: "Lápis",
-    preco: 1.99,
-    categoria: "Papelaria",
-    imagem: "lapis.jpg"
-};
-
-const novaLista = [...produtos, novoProduto];
-
-console.log("Nova lista:");
-
-console.log(novaLista);
+ // iniciar
+ renderizarTarefas();
