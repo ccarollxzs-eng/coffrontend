@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
 
     <title>Crochê</title>
 </head>
@@ -26,6 +26,16 @@
                 <li><a href="#contato">Contato</a></li>
             </ul>
         </nav>
+
+        <!--Mini carrinho exposto no topo-->
+        <div class="mini-cart">
+        <span>🛒</span>
+        <span id="cart-count">0</span>
+        <div class="mini-cart-dropdown" id="mini-cart-dropdown">
+            <ul id="mini-cart-list"></ul>
+            <p id="mini-total">Total: R$0</p>     
+            </div> 
+        </div>
     </header>
 
     <main>
@@ -41,7 +51,7 @@
         <section class="produto">
             <h2>Catálogo de produtos</h2>
         </section>
-        <section id="produtos">
+        <section id="produtos"> 
             
 
             <article class="product-card">
