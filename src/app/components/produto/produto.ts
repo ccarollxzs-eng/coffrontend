@@ -1,18 +1,20 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { PrecoFormatadoPipe } from '../../pipes/preco-formatado-pipe';
+import { CurrencyPipe, UpperCasePipe } from '@angular/common';
 
 @Component({
   selector: 'app-produto',
-  imports: [],
+  imports: [CurrencyPipe, UpperCasePipe, PrecoFormatadoPipe],
   templateUrl: './produto.html',
   styleUrl: './produto.css',
 })
 export class Produto {
-  nome = "Notebook";
-  preco = 149.99;
-  mostrarPreco = true;
+  @Input() nome = "";
+  @Input() preco = 0;
 
-  produtos = [
-    {nome:'Monitor', preco:'250'}
-  ]
+ @Output() produtoSelecionado = new EventEmitter<string>();
+
+ selecionarProduto(){
+  this.produtoSelecionado.emit(this.nome);
+ }
 }
- 
