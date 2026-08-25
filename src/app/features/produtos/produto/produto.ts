@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { PrecoFormatadoPipe } from '../../pipes/preco-formatado-pipe';
+import { PrecoFormatadoPipe } from '../../../shared/pipes/preco-formatado-pipe';
 import { CurrencyPipe, UpperCasePipe } from '@angular/common';
 
 @Component({
