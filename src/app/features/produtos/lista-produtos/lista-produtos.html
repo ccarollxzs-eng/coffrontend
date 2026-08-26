@@ -6,13 +6,20 @@
         <span style="color: gray;">Nenhum</span>
     }
 </h2>
+<hr>
 
+<h2>Produtos:</h2>
+@if(carregando()){
+    <p>Carregando produtos...</p>
+}
+
+@if (!carregando()){
 
 @for(item of produtos (); track item.nome){
     <app-produto [nome]="item.nome" [preco]="item.preco" (produtoSelecionado)="exibirProduto($event)"></app-produto>
 
+ }
 }
-
 @for (item of produtos(); track $index) {
     <app-produto [nome]="item.nome"
     [preco]="item.preco"
